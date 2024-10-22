@@ -33,12 +33,31 @@ module.exports = grammar({
     _line: $ => choice($.entry,  $.comment, NEWLINE),
 
     entry: $ => seq(
-      field('key', $.identifier),
+      field('key', choice($.identifier, $.localized_key)),
       '=',
       /[ \t]*/,
       field('value', $._value),
       END_OF_LINE,
     ),
+
+    localized_key: $ => seq(
+      field('name', $.identifier),
+      token.immediate('['),
+      field('locale', $.locale),
+      token.immediate(']')
+    ),
+
+    locale: $ => seq(
+      $.language,
+      optional($.country),
+      optional($.encoding),
+      optional($.modifier),
+    ),
+
+    language: _ => token.immediate(/[a-z]+/),
+    country: _ => token.immediate(/_[A-Z]+/),
+    encoding: _ => token.immediate(/\.[a-zA-Z0-9-]+/),
+    modifier: _ => token.immediate(/@[a-zA-Z0-9-]+/),
 
     _value: $ => choice(
       $.true,
