@@ -479,7 +479,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       );
       END_STATE();
     case 13:
-      if (('A' <= lookahead && lookahead <= 'Z')) ADVANCE(37);
+      if (('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(37);
       END_STATE();
     case 14:
       if (lookahead == '-' ||
@@ -642,7 +643,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 37:
       ACCEPT_TOKEN(sym_country);
-      if (('A' <= lookahead && lookahead <= 'Z')) ADVANCE(37);
+      if (('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(37);
       END_STATE();
     case 38:
       ACCEPT_TOKEN(sym_encoding);

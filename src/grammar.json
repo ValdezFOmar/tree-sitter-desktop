@@ -230,7 +230,7 @@
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "_[A-Z]+"
+        "value": "_[a-zA-Z]+"
       }
     },
     "encoding": {

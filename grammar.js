@@ -55,7 +55,7 @@ module.exports = grammar({
     ),
 
     language: _ => token.immediate(/[a-z]+/),
-    country: _ => token.immediate(/_[A-Z]+/),
+    country: _ => token.immediate(/_[a-zA-Z]+/),
     encoding: _ => token.immediate(/\.[a-zA-Z0-9-]+/),
     modifier: _ => token.immediate(/@[a-zA-Z0-9-]+/),
 
