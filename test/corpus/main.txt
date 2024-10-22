@@ -1,0 +1,99 @@
+===========================================================
+Comments
+===========================================================
+# Hello
+
+# world
+
+-----------------------------------------------------------
+
+(desktop_entry
+  (comment)
+  (comment))
+
+===========================================================
+Group name
+===========================================================
+[Desktop Entry]
+[Desktop Action]
+[;&/(%)]
+[ -_ ?\$]
+
+-----------------------------------------------------------
+
+(desktop_entry
+  (group
+    (header
+      (group_name)))
+  (group
+    (header
+      (group_name)))
+  (group
+    (header
+      (group_name)))
+  (group
+    (header
+      (group_name))))
+
+===========================================================
+Entries (key/value pairs)
+===========================================================
+[Desktop Entry]
+Name=Neovim
+Terminal=true
+StartupNotify=false
+MimeType=text/plain;text/x-makefile;text/x-c++hdr;
+
+-----------------------------------------------------------
+(desktop_entry
+  (group
+    (header
+      (group_name))
+    (entry
+      key: (identifier)
+      value: (string))
+    (entry
+      key: (identifier)
+      value: (true))
+    (entry
+      key: (identifier)
+      value: (false))
+    (entry
+      key: (identifier)
+      value: (list
+        (string)
+        (string)
+        (string)))))
+
+
+===========================================================
+Optional semicolon
+===========================================================
+[Desktop Entry]
+string=hello world
+list1=hello;
+list2=hello;world
+list3=hello;world;
+
+-----------------------------------------------------------
+(desktop_entry
+  (group
+    (header
+      (group_name))
+    (entry
+      key: (identifier)
+      value: (string))
+    (entry
+      key: (identifier)
+      value: (list
+        (string)))
+    (entry
+      key: (identifier)
+      value: (list
+        (string)
+        (string)))
+    (entry
+      key: (identifier)
+      value: (list
+        (string)
+        (string)))))

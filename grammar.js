@@ -8,6 +8,7 @@
 // @ts-check
 
 const NEWLINE = /\n/;
+const END_OF_LINE = NEWLINE;
 
 module.exports = grammar({
   name: "desktop",
@@ -20,22 +21,23 @@ module.exports = grammar({
       repeat($.group),
     ),
 
-    comment: _ => /#.*/,
+    comment: _ => seq(/#.*/, END_OF_LINE),
 
     group: $ => seq(
       $.header,
       repeat($._line),
     ),
 
-    header: $ => seq('[', $.group_name, ']', NEWLINE),
+    header: $ => seq('[', $.group_name, ']', END_OF_LINE),
 
-    _line: $ => seq(optional(choice($.comment, $.entry)), NEWLINE),
+    _line: $ => choice($.entry,  $.comment, NEWLINE),
 
     entry: $ => seq(
       field('key', $.identifier),
       '=',
       /[ \t]*/,
       field('value', $._value),
+      END_OF_LINE,
     ),
 
     _value: $ => choice(
