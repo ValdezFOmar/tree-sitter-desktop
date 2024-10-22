@@ -11,7 +11,6 @@ module.exports = grammar({
   name: "desktop",
 
   rules: {
-    // NOTE: add the actual grammar rules
-    changeme: $ => "",
+    desktop_entry: $ => '',
   }
 });

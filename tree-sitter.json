@@ -6,7 +6,8 @@
       "path": ".",
       "scope": "source.desktop",
       "file-types": [
-        ".desktop"
+        ".desktop",
+        ".directory"
       ],
       "injection-regex": "^desktop$",
       "highlights": "queries/highlights.scm"
@@ -24,5 +25,13 @@
         "email": "omarantoniovaldezf2@gmail.com"
       }
     ]
+  },
+  "bindings": {
+    "c": true,
+    "node": true,
+    "rust": true,
+    "go": false,
+    "python": false,
+    "swift": false
   }
 }
