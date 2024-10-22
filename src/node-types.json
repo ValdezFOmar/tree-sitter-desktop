@@ -25,6 +25,11 @@
     }
   },
   {
+    "type": "encoding",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "entry",
     "named": true,
     "fields": {
@@ -173,6 +178,11 @@
     }
   },
   {
+    "type": "modifier",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "string",
     "named": true,
     "fields": {},
@@ -192,11 +202,19 @@
     }
   },
   {
+    "type": ".",
+    "named": false
+  },
+  {
     "type": ";",
     "named": false
   },
   {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": "@",
     "named": false
   },
   {
@@ -208,11 +226,11 @@
     "named": false
   },
   {
-    "type": "country",
-    "named": true
+    "type": "_",
+    "named": false
   },
   {
-    "type": "encoding",
+    "type": "country",
     "named": true
   },
   {
@@ -237,10 +255,6 @@
   },
   {
     "type": "language",
-    "named": true
-  },
-  {
-    "type": "modifier",
     "named": true
   },
   {

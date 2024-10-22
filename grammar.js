@@ -49,15 +49,15 @@ module.exports = grammar({
 
     locale: $ => seq(
       $.language,
-      optional($.country),
-      optional($.encoding),
-      optional($.modifier),
+      optional(seq(token.immediate('_'), $.country)),
+      optional(seq(token.immediate('.'), $.encoding)),
+      optional(seq(token.immediate('@'), $.modifier))
     ),
 
     language: _ => token.immediate(/[a-z]+/),
-    country: _ => token.immediate(/_[a-zA-Z]+/),
-    encoding: _ => token.immediate(/\.[a-zA-Z0-9-]+/),
-    modifier: _ => token.immediate(/@[a-zA-Z0-9-]+/),
+    country: _ => token.immediate(/[a-zA-Z]+/),
+    encoding: _ => token.immediate(/[a-zA-Z0-9-]+/),
+    modifier: _ => token.immediate(/[a-zA-Z0-9-]+/),
 
     _value: $ => choice(
       $.true,

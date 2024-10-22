@@ -28,7 +28,12 @@
 
 "=" @operator
 
-";" @punctuation.delimiter
+[
+  ";"
+  "_"
+  "."
+  "@"
+] @punctuation.delimiter
 
 [
   "["

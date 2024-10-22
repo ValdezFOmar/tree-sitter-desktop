@@ -185,8 +185,20 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "country"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "IMMEDIATE_TOKEN",
+                  "content": {
+                    "type": "STRING",
+                    "value": "_"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "country"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -197,8 +209,20 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "encoding"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "IMMEDIATE_TOKEN",
+                  "content": {
+                    "type": "STRING",
+                    "value": "."
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "encoding"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -209,8 +233,20 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "modifier"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "IMMEDIATE_TOKEN",
+                  "content": {
+                    "type": "STRING",
+                    "value": "@"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "modifier"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -230,21 +266,21 @@
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "_[a-zA-Z]+"
+        "value": "[a-zA-Z]+"
       }
     },
     "encoding": {
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "\\.[a-zA-Z0-9-]+"
+        "value": "[a-zA-Z0-9-]+"
       }
     },
     "modifier": {
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "@[a-zA-Z0-9-]+"
+        "value": "[a-zA-Z0-9-]+"
       }
     },
     "_value": {
