@@ -1,0 +1,28 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "desktop",
+      "path": ".",
+      "scope": "source.desktop",
+      "file-types": [
+        ".desktop"
+      ],
+      "injection-regex": "^desktop$",
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "links": {
+      "repository": "https://github.com/ValdezFOmar/tree-sitter-desktop"
+    },
+    "version": "0.1.0",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Omar Valdez",
+        "email": "omarantoniovaldezf2@gmail.com"
+      }
+    ]
+  }
+}
