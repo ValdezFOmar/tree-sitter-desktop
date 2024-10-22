@@ -54,7 +54,7 @@ module.exports = grammar({
       optional(seq(token.immediate('@'), $.modifier))
     ),
 
-    language: _ => token.immediate(/[a-z]+/),
+    language: _ => token.immediate(/[a-z-]+/),
     country: _ => token.immediate(/[a-zA-Z]+/),
     encoding: _ => token.immediate(/[a-zA-Z0-9-]+/),
     modifier: _ => token.immediate(/[a-zA-Z0-9-]+/),

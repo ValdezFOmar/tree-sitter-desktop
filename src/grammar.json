@@ -259,7 +259,7 @@
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[a-z]+"
+        "value": "[a-z-]+"
       }
     },
     "country": {
