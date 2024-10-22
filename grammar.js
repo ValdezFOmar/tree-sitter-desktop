@@ -51,7 +51,11 @@ module.exports = grammar({
 
     false: _ => 'false',
 
-    string: _ => /[^;\n\r]+/,
+    string: $ => repeat1(choice(/[^;\n\r]/, $.escape_sequence, $.field_code)),
+
+    escape_sequence: _ => /\\[sntr\\;]/,
+
+    field_code: _ => /%[%fFuUdDnNickvm]/,
 
     list: $ => choice(
       seq($.string, ';'),
