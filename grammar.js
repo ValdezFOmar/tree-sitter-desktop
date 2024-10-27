@@ -11,7 +11,7 @@ const NEWLINE = /\n/;
 const END_OF_LINE = NEWLINE;
 
 module.exports = grammar({
-  name: "desktop",
+  name: 'desktop',
 
   extras: _ => [/[ \t]/],
 
@@ -44,14 +44,14 @@ module.exports = grammar({
       field('name', $.identifier),
       token.immediate('['),
       field('locale', $.locale),
-      token.immediate(']')
+      token.immediate(']'),
     ),
 
     locale: $ => seq(
       $.language,
       optional(seq(token.immediate('_'), $.country)),
       optional(seq(token.immediate('.'), $.encoding)),
-      optional(seq(token.immediate('@'), $.modifier))
+      optional(seq(token.immediate('@'), $.modifier)),
     ),
 
     language: _ => token.immediate(/[a-z-]+/),
@@ -78,12 +78,12 @@ module.exports = grammar({
 
     list: $ => choice(
       seq($.string, ';'),
-      seq($.string, repeat1(seq(';', $.string)), optional(';'))
+      seq($.string, repeat1(seq(';', $.string)), optional(';')),
     ),
 
     // Group names may contain all ASCII characters, except for '[', ']' and control characters.
     group_name: _ => /[\x20-\x5A\x5C\x5E-\x7E]+/,
 
     identifier: _ => /[A-Za-z0-9-]+/,
-  }
+  },
 });
