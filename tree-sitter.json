@@ -6,8 +6,8 @@
       "path": ".",
       "scope": "source.desktop",
       "file-types": [
-        ".desktop",
-        ".directory"
+        "desktop",
+        "directory"
       ],
       "injection-regex": "^desktop$",
       "highlights": "queries/highlights.scm"
