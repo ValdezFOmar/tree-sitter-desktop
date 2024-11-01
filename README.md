@@ -14,6 +14,14 @@ the [Desktop Entry Specification][specification].
 
 - [File format][file-format] as defined by the [Desktop Entry Specification][specification]
 
+## Editors
+
+### Neovim
+
+You can install this parser using [`nvim-treesitter`][nvim-treesitter],
+run `TSInstall desktop`.
+
+
 [ci]: https://img.shields.io/github/actions/workflow/status/ValdezFOmar/tree-sitter-desktop/ci.yml?logo=github&label=CI
 [discord]: https://img.shields.io/discord/1063097320771698699?logo=discord&label=discord
 [matrix]: https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&label=matrix
@@ -23,3 +31,4 @@ the [Desktop Entry Specification][specification].
 
 [specification]: https://specifications.freedesktop.org/desktop-entry-spec/latest/index.html
 [file-format]: https://specifications.freedesktop.org/desktop-entry-spec/latest/basic-format.html
+[nvim-treesitter]: https://github.com/nvim-treesitter/nvim-treesitter
