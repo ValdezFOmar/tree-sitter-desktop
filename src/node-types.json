@@ -1,10 +1,5 @@
 [
   {
-    "type": "comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "desktop_entry",
     "named": true,
     "root": true,
@@ -228,6 +223,10 @@
   {
     "type": "_",
     "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
   },
   {
     "type": "country",

@@ -21,22 +21,29 @@ module.exports = grammar({
       repeat($.group),
     ),
 
-    comment: _ => seq(/#.*/, END_OF_LINE),
+    comment: _ => token(seq(/#.*/, END_OF_LINE)),
 
     group: $ => seq(
       $.header,
-      repeat($._line),
+      repeat(choice(
+        $.entry,
+        $.comment,
+        NEWLINE,
+      )),
     ),
 
     header: $ => seq('[', $.group_name, ']', END_OF_LINE),
-
-    _line: $ => choice($.entry,  $.comment, NEWLINE),
 
     entry: $ => seq(
       field('key', choice($.identifier, $.localized_key)),
       '=',
       /[ \t]*/,
-      field('value', $._value),
+      field('value', choice(
+        $.true,
+        $.false,
+        $.string,
+        $.list,
+      )),
       END_OF_LINE,
     ),
 
@@ -59,21 +66,11 @@ module.exports = grammar({
     encoding: _ => token.immediate(/[a-zA-Z0-9-]+/),
     modifier: _ => token.immediate(/[a-zA-Z0-9-]+/),
 
-    _value: $ => choice(
-      $.true,
-      $.false,
-      $.string,
-      $.list,
-    ),
-
     true: _ => 'true',
-
     false: _ => 'false',
 
     string: $ => repeat1(choice(/[^;\n\r]/, $.escape_sequence, $.field_code)),
-
     escape_sequence: _ => /\\[sntr\\;]/,
-
     field_code: _ => /%[%fFuUdDnNickvm]/,
 
     list: $ => choice(
