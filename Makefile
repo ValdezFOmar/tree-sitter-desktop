@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-desktop
 HOMEPAGE_URL := https://github.com/valdezfomar/tree-sitter-desktop
-VERSION := 0.1.0
+VERSION := 0.1.1
 
 # repository
 SRC_DIR := src
