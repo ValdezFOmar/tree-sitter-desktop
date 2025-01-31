@@ -13,34 +13,32 @@ updates:
       actions:
         patterns: ["*"]
 
-  # NOTE: uncomment the ecosystems you want to keep up-to-date
+  - package-ecosystem: npm
+    versioning-strategy: increase
+    directory: /
+    schedule:
+      interval: weekly
+      day: sunday
+    commit-message:
+      prefix: build(deps)
+    labels:
+      - dependencies
+    groups:
+      npm:
+        patterns: ["*"]
 
-  # - package-ecosystem: npm
-  #   versioning-strategy: increase
-  #   directory: /
-  #   schedule:
-  #     interval: weekly
-  #     day: sunday
-  #   commit-message:
-  #     prefix: build(deps)
-  #   labels:
-  #     - dependencies
-  #   groups:
-  #     npm:
-  #       patterns: ["*"]
-
-  # - package-ecosystem: cargo
-  #   directory: /
-  #   schedule:
-  #     interval: weekly
-  #     day: sunday
-  #   commit-message:
-  #     prefix: build(deps)
-  #   labels:
-  #     - dependencies
-  #   groups:
-  #     cargo:
-  #       patterns: ["*"]
+  - package-ecosystem: cargo
+    directory: /
+    schedule:
+      interval: weekly
+      day: sunday
+    commit-message:
+      prefix: build(deps)
+    labels:
+      - dependencies
+    groups:
+      cargo:
+        patterns: ["*"]
 
   # - package-ecosystem: pip
   #   directory: /
