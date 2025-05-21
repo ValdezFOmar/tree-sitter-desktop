@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-desktop",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Desktop grammar for tree-sitter",
   "repository": "https://github.com/valdezfomar/tree-sitter-desktop",
   "license": "MIT",
