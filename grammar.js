@@ -35,7 +35,8 @@ module.exports = grammar({
     header: $ => seq('[', $.group_name, ']', END_OF_LINE),
 
     entry: $ => seq(
-      field('key', choice($.identifier, $.localized_key)),
+      field('key', $.identifier),
+      optional(field('locale', $.locale)),
       '=',
       /[ \t]*/,
       field('value', choice(
@@ -47,18 +48,13 @@ module.exports = grammar({
       END_OF_LINE,
     ),
 
-    localized_key: $ => seq(
-      field('name', $.identifier),
-      token.immediate('['),
-      field('locale', $.locale),
-      token.immediate(']'),
-    ),
-
     locale: $ => seq(
+      token.immediate('['),
       $.language,
       optional(seq(token.immediate('_'), $.country)),
       optional(seq(token.immediate('.'), $.encoding)),
       optional(seq(token.immediate('@'), $.modifier)),
+      token.immediate(']'),
     ),
 
     language: _ => token.immediate(/[a-z-]+/),

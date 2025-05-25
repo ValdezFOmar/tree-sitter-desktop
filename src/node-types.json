@@ -35,9 +35,15 @@
           {
             "type": "identifier",
             "named": true
-          },
+          }
+        ]
+      },
+      "locale": {
+        "multiple": false,
+        "required": false,
+        "types": [
           {
-            "type": "localized_key",
+            "type": "locale",
             "named": true
           }
         ]
@@ -144,32 +150,6 @@
           "named": true
         }
       ]
-    }
-  },
-  {
-    "type": "localized_key",
-    "named": true,
-    "fields": {
-      "locale": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "locale",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
     }
   },
   {
