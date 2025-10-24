@@ -28,7 +28,7 @@ module.exports = grammar({
       repeat(choice(
         $.entry,
         $.comment,
-        NEWLINE,
+        END_OF_LINE,
       )),
     ),
 

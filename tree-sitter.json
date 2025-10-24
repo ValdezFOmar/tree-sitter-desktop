@@ -10,7 +10,8 @@
         "directory"
       ],
       "injection-regex": "^desktop$",
-      "highlights": "queries/highlights.scm"
+      "highlights": "queries/desktop/highlights.scm",
+      "injections": "queries/desktop/injections.scm"
     }
   ],
   "metadata": {
