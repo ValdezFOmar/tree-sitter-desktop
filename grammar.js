@@ -10,7 +10,7 @@
 const NEWLINE = /\n/;
 const END_OF_LINE = NEWLINE;
 
-module.exports = grammar({
+export default grammar({
   name: 'desktop',
 
   extras: _ => [/[ \t]/],
