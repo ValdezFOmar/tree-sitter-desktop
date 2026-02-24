@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
       day: saturday
     commit-message:
       prefix: ci
@@ -17,7 +17,7 @@ updates:
     versioning-strategy: increase
     directory: /
     schedule:
-      interval: weekly
+      interval: quarterly
       day: sunday
     commit-message:
       prefix: build(deps)
@@ -30,7 +30,7 @@ updates:
   - package-ecosystem: cargo
     directory: /
     schedule:
-      interval: weekly
+      interval: quarterly
       day: sunday
     commit-message:
       prefix: build(deps)
@@ -39,42 +39,3 @@ updates:
     groups:
       cargo:
         patterns: ["*"]
-
-  # - package-ecosystem: pip
-  #   directory: /
-  #   schedule:
-  #     interval: weekly
-  #     day: sunday
-  #   commit-message:
-  #     prefix: build(deps)
-  #   labels:
-  #     - dependencies
-  #   groups:
-  #     pip:
-  #       patterns: ["*"]
-
-  # - package-ecosystem: swift
-  #   directory: /
-  #   schedule:
-  #     interval: weekly
-  #     day: sunday
-  #   commit-message:
-  #     prefix: build(deps)
-  #   labels:
-  #     - dependencies
-  #   groups:
-  #     swift:
-  #       patterns: ["*"]
-
-  # - package-ecosystem: gomod
-  #   directory: /
-  #   schedule:
-  #     interval: weekly
-  #     day: sunday
-  #   commit-message:
-  #     prefix: build(deps)
-  #   labels:
-  #     - dependencies
-  #   groups:
-  #     go:
-  #       patterns: ["*"]
