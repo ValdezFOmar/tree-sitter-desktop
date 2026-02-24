@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-desktop",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Desktop grammar for tree-sitter",
   "type": "module",
   "repository": {
