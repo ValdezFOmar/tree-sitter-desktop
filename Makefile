@@ -1,6 +1,6 @@
 LANGUAGE_NAME := tree-sitter-desktop
 HOMEPAGE_URL := https://github.com/valdezfomar/tree-sitter-desktop
-VERSION := 1.1.0
+VERSION := 1.1.1
 
 # repository
 SRC_DIR := src
